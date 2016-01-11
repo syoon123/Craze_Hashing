@@ -13,6 +13,12 @@ public class Card {
 	else if (c == "green") {color = "\u001B[32m";}
 	
     }
+    public Card() {
+	num = 1;
+	shape = "X";
+	shading = "[]";
+	color = "\u001B[31m";
+    }
     public int getNum() {
 	return num;
     }
