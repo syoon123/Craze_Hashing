@@ -1,0 +1,18 @@
+Team Craze_Hashing -- Sarah Yoon, Zicheng Zhen
+APCS1 pd10
+Final Project -- DevLog
+
+~TEMPLATE~
+================================================================================
+Date: 
+Contributor:
+<Progress>
+================================================================================
+
+================================================================================
+Date: 2016-01-09
+Contributor: SY
+- created repo, registered team, added tentative Card.java
+- Card.java includes discussed attributes (num, color, shape, shading), accessors, mutators, toString(), and a constructor
+- Card.java still needs a default constructor
+================================================================================
