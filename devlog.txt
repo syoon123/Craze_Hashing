@@ -13,6 +13,20 @@ Contributor:
 Date: 2016-01-09
 Contributor: SY
 - created repo, registered team, added tentative Card.java
-- Card.java includes discussed attributes (num, color, shape, shading), accessors, mutators, toString(), and a constructor
-- Card.java still needs a default constructor
+- Card.java includes discussed attributes (num, color, shape, shading), accessors, toString(), and a constructor
+- Card.java still needs a default constructor and mutators
 ================================================================================
+
+================================================================================
+Date: 2016-01-11
+Contributor: SY
+- added default constructor to Card.java
+- created skeleton file for Board.java
+================================================================================
+
+================================================================================
+Date: 2016-01-11
+Contributor: ZZ
+- added mutators to Card.java
+================================================================================
+
