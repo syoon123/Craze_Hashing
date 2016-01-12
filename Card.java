@@ -1,9 +1,13 @@
 public class Card {
+    // INSTANCE VARIABLES
     private int num; //1, 2, or 3
     private String color; //red, blue, or green
     private String shape; //O, X, or S
     private String shading; //(), {}, or []
+
+    // CONSTRUCTORS
     public Card(int n, String c, String p, String d) {
+	this();
 	num = n;
 	shape = p;
 	shading = d;
@@ -19,6 +23,8 @@ public class Card {
 	shading = "[]";
 	color = "\u001B[31m";
     }
+
+    // ACCESSORS AND MUTATORS
     public int getNum() {
 	return num;
     }
@@ -39,6 +45,30 @@ public class Card {
 	return color + retStr;
     }
 
+    public int setNum(int n) {
+	int ret = getNum();
+	num = n;
+	return ret;
+    }
+    public String setColor(String c) {
+	String ret = getColor();
+	if (c == "red") {color = "\u001B[31m";}
+	else if (c == "blue") {color = "\u001B[34m";}
+	else if (c == "green") {color = "\u001B[32m";}
+	return ret;
+    }
+    public String setShading(String s) {
+	String ret = getShading();
+	shading = s;
+	return ret;
+    }
+    public String setShape(String s) {
+	String ret = getShape();
+	shape = s;
+	return ret;
+    }
+
+    // TESTING
     public static void main(String[] args) {
 	String[] colors = {"red","blue","green"};
 	String[] shapes = {"O","X","S"};
