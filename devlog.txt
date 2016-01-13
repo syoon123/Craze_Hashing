@@ -12,7 +12,16 @@ Contributor:
 ================================================================================
 Date: 2016-01-12
 Contributor: SY
-
+- modified Card.java
+  - edited toString() to include varying number of spaces after card
+- added methods to Board.java
+  - added distribute(). compiles, no nice way to test it yet, because there
+    is no mechanism yet for selecting cards for the board
+  - added toString(). compiles and works for freshly initialized 3x3 board, but
+    after running draw(), it printed the same 3x3 board twice. not sure if this
+    was a toString() issue or a draw() issue, worth looking at tomorrow. wanted
+    to take care of the A B C on the left and the 0 1 2 3 ... on the top as well
+    but think taking care of this draw()/toString() bug is a higher priority.
 ================================================================================
 
 ================================================================================
@@ -48,7 +57,8 @@ Contributor: SY
 Date: 2016-01-09
 Contributor: SY
 - created repo, registered team, added tentative Card.java
-- Card.java includes discussed attributes (num, color, shape, shading), accessors, toString(), and a constructor
+- Card.java includes discussed attributes (num, color, shape, shading),
+  accessors, toString(), and a constructor
 - Card.java still needs a default constructor and mutators
 ================================================================================
 
