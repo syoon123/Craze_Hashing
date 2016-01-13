@@ -10,10 +10,25 @@ Contributor:
 ================================================================================
 
 ================================================================================
+Date: 2016-01-12
+Contributor: ZZ
+- change data structure of board in Board.java to nested ArrayLists
+- add default constructor to Board.java
+- add numCards instance variable to Board.java in order to track cards
+  - will be used for future methods, such as distribute()
+  - add resetNumCards() to track numCards
+- add deck generation methods
+  - create generateDeck()
+  - create shuffleDeck()
+- add board manipulation methods
+  - create draw()
+================================================================================
+
+================================================================================
 Date: 2016-01-11
 Contributor: ZZ
-- added mutators to Card.java
-- added comments 
+- add mutators to Card.java
+- add comments 
 ================================================================================
 
 ================================================================================
