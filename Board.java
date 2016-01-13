@@ -5,11 +5,13 @@ public class Board {
     // INSTANCE VARIABLES
     private int numCards = 0; // Tracks number of cards on the board.
     private ArrayList<Card> deck = new ArrayList<Card>();
-    private ArrayList[] board = new ArrayList[0];
+    private ArrayList<ArrayList<Card>> board = new ArrayList<ArrayList<Card>>();
 
     // CONSTRUCTORS
     public Board() {
-	board = new ArrayList[3];   // Makes a 3 row board
+	board = new ArrayList<ArrayList<Card>>();
+	for (int i = 0; i < 3; i++) // Makes a 3 row board
+	    board.add(new ArrayList<Card>());
 	generateDeck();             // Creates a deck
 	for (int i = 0; i < 3; i++) // Deals 9 cards
 	    draw();
@@ -18,8 +20,7 @@ public class Board {
     
     // ACCESSORS AND MUTATORS
     public Card get(int row, int col) {
-	ArrayList getRow = board[row];
-	return (Card)(getRow.get(col)); // Will this work?
+	return board.get(row).get(col);
     }
     public int resetNumCards() {
 	int total = 0;
@@ -49,7 +50,7 @@ public class Board {
     // METHODS - BOARD MANIPULATION
     // draw() means picking three new cards from the deck
     public void draw() {
-	for (ArrayList al : board)
+	for (ArrayList<Card> al : board)
 	    al.add(deck.remove(0));
     }
 
