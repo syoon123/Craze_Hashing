@@ -11,6 +11,12 @@ Contributor:
 
 ================================================================================
 Date: 2016-01-12
+Contributor: SY
+
+================================================================================
+
+================================================================================
+Date: 2016-01-12
 Contributor: ZZ
 - change data structure of board in Board.java to nested ArrayLists
 - add default constructor to Board.java

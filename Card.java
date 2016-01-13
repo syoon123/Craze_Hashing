@@ -21,7 +21,7 @@ public class Card {
 	num = 1;
 	shape = "X";
 	shading = "[]";
-	color = "\u001B[31m";
+	color = "\u001B[34m";
     }
 
     // ACCESSORS AND MUTATORS
@@ -42,7 +42,10 @@ public class Card {
 	for (int i=0; i<num; i++) {
 	    retStr += shading.substring(0,1) + shape + shading.substring(1);
 	}
-	return color + retStr;
+	for (int y=0; y<=9-num*3; y++) {
+	    retStr += " ";
+	}
+	return color + retStr +"\u001B[0m";
     }
 
     public int setNum(int n) {

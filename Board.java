@@ -13,6 +13,7 @@ public class Board {
 	for (int i = 0; i < 3; i++) // Makes a 3 row board
 	    board.add(new ArrayList<Card>());
 	generateDeck();             // Creates a deck
+	shuffleDeck();              // Shuffles deck
 	for (int i = 0; i < 3; i++) // Deals 9 cards
 	    draw();
 	resetNumCards();            // Resets NumCards to 9
@@ -52,12 +53,24 @@ public class Board {
     public void draw() {
 	for (ArrayList<Card> al : board)
 	    al.add(deck.remove(0));
+	numCards += 3;
     }
 
-    // shiftLeft() and distribute() will arrange and make the board look nice
-    public void shiftLeft() { // No longer needed
-    }
     public void distribute() {
+	int rowLength = (numCards + 1)/3; // num of cards each row should have
+	ArrayList<Card> stash = new ArrayList<Card>(); // temp storage of cards to be moved
+	for (ArrayList<Card> al : board) {
+	    if (al.size() > rowLength) { // chop off cards past average row size, store to be readded 
+		for(Card b : al) {
+		    stash.add(b); 
+		}
+	    }
+	}
+	for (ArrayList<Card> al : board) {
+	    while (al.size()<rowLength) { // tack on cards until row reaches average size
+		al.add(stash.remove(0)); // move cards from stash to new spots
+	    }
+	}	    
     }
 
     // METHODS - VERIFICATION
@@ -65,13 +78,25 @@ public class Board {
 	return false; // DO LATER
     }
 
-    // METHODS - OTHER
+    // METHODS - PRINT BOARD
     public String toString() {
-	return "oof";
+	String retStr = "";
+	for (int k=0; k<3; k++) {
+	    String row = "";
+	    for (int j=0; j<board.size(); j++) {
+		row += get(j,k).toString();
+	    }
+	    row += "\n";
+	    retStr += row;
+	}
+	return retStr;
     }
 
     // TESTING
     public static void main(String [] args) {
 	Board board = new Board();
+	System.out.println(board);
+	board.draw();
+	System.out.println(board);
     }
 }
