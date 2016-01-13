@@ -50,13 +50,13 @@ public class Board {
 
     // METHODS - BOARD MANIPULATION
     // draw() means picking three new cards from the deck
-    public void draw() {
+    public void draw() { // there might be an issue with this??
 	for (ArrayList<Card> al : board)
 	    al.add(deck.remove(0));
 	numCards += 3;
     }
 
-    public void distribute() {
+    public void distribute() { // Can't test right now, don't have mechanism for selecting cards
 	int rowLength = (numCards + 1)/3; // num of cards each row should have
 	ArrayList<Card> stash = new ArrayList<Card>(); // temp storage of cards to be moved
 	for (ArrayList<Card> al : board) {
@@ -79,12 +79,12 @@ public class Board {
     }
 
     // METHODS - PRINT BOARD
-    public String toString() {
+    public String toString() { // there might be an issue with this??
 	String retStr = "";
 	for (int k=0; k<3; k++) {
 	    String row = "";
 	    for (int j=0; j<board.size(); j++) {
-		row += get(j,k).toString();
+		row += get(j,k).toString(); // grow a row to display by iterating through board's columns
 	    }
 	    row += "\n";
 	    retStr += row;
@@ -98,5 +98,6 @@ public class Board {
 	System.out.println(board);
 	board.draw();
 	System.out.println(board);
+	// not sure why this gives the same 3x3 board twice
     }
 }
