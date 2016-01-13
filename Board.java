@@ -20,7 +20,7 @@ public class Board {
     }
     
     // ACCESSORS AND MUTATORS
-    public Card get(int row, int col) {
+    public Card getCard(int row, int col) {
 	return board.get(row).get(col);
     }
     public int resetNumCards() {
@@ -81,13 +81,11 @@ public class Board {
     // METHODS - PRINT BOARD
     public String toString() { // there might be an issue with this??
 	String retStr = "";
-	for (int k=0; k<3; k++) {
-	    String row = "";
-	    for (int j=0; j<board.size(); j++) {
-		row += get(j,k).toString(); // grow a row to display by iterating through board's columns
+	    for (int row = 0; row < 3; row ++) {
+		for (int col = 0; col < board.get(0).size(); col++) {
+		retStr += getCard(row, col).toString();
 	    }
-	    row += "\n";
-	    retStr += row;
+	    retStr += "\n";
 	}
 	return retStr;
     }
