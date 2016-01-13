@@ -15,7 +15,7 @@ public class Board {
 	generateDeck();             // Creates a deck
 	shuffleDeck();              // Shuffles deck
 	for (int i = 0; i < 3; i++) // Deals 9 cards
-	    draw();
+	    drawAll();
 	resetNumCards();            // Resets NumCards to 9
     }
     
@@ -23,6 +23,20 @@ public class Board {
     public Card getCard(int row, int col) {
 	return board.get(row).get(col);
     }
+    public Card removeCard(int row, int col) {
+	Card ret = board.get(row).remove(col);
+	resetNumCards();
+	return ret;
+    }
+    public ArrayList<Card> removeSet(int r1, int c1, int r2, int c2, int r3, int c3) {
+	ArrayList<Card> ret = new ArrayList<Card>();
+	ret.add(removeCard(r1,c1));
+	ret.add(removeCard(r2,c2));
+	ret.add(removeCard(r3,c3));
+	resetNumCards();
+	return ret;
+    }
+
     public int resetNumCards() {
 	int total = 0;
 	for (ArrayList al : board)
@@ -49,11 +63,15 @@ public class Board {
     }
 
     // METHODS - BOARD MANIPULATION
-    // draw() means picking three new cards from the deck
-    public void draw() { // there might be an issue with this??
+    // drawAll() means picking three new cards from the deck
+    public void drawTo(int row) {
+	board.get(row).add(deck.remove(0));
+	resetNumCards();
+    }
+    public void drawAll() {
 	for (ArrayList<Card> al : board)
 	    al.add(deck.remove(0));
-	numCards += 3;
+	resetNumCards();
     }
 
     public void distribute() { // Can't test right now, don't have mechanism for selecting cards
@@ -94,8 +112,7 @@ public class Board {
     public static void main(String [] args) {
 	Board board = new Board();
 	System.out.println(board);
-	board.draw();
+	board.drawAll();
 	System.out.println(board);
-	// not sure why this gives the same 3x3 board twice
     }
 }
