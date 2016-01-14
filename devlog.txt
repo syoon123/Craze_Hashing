@@ -12,7 +12,12 @@ Contributor:
 ================================================================================
 Date: 2016-01-13
 Contributor: SY
-- debugged Board's toString()! 
+- debugged Board's toString()!
+  - still need to do the A B C 0 1 2 3 thing but that can be done later as a
+    finishing touch
+- an incomplete skeleton of Set.java (driver class)
+  - I say incomplete because there are more methods and things that we haven't
+    planned out yet; I simply included the ones I know we need to implement.
 ================================================================================
 
 ================================================================================
