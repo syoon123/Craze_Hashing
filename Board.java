@@ -6,7 +6,8 @@ public class Board {
     private int numCards = 0; // Tracks number of cards on the board.
     private ArrayList<Card> deck = new ArrayList<Card>();
     private ArrayList<ArrayList<Card>> board = new ArrayList<ArrayList<Card>>();
-
+    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUV";
+    
     // CONSTRUCTORS
     public Board() {
 	board = new ArrayList<ArrayList<Card>>();
@@ -98,9 +99,15 @@ public class Board {
 
     // METHODS - PRINT BOARD
     public String toString() { // there might be an issue with this??
-	String retStr = "";
-	    for (int row = 0; row < 3; row ++) {
-		for (int col = 0; col < board.get(0).size(); col++) {
+	String retStr = "\t";
+	int size = board.get(0).size();
+	for (int i = 0; i < size; i++)
+	    retStr += i + "\t"; // Column Headings (0 - 9)
+	retStr += "\n";
+	for (int row = 0; row < 3; row ++) {
+	    retStr += ALPHABET.substring(row,row+1) + "\t"; // Row Headings
+	    for (int col = 0; col < size; col++) {
+		// retStr += row + "," + col + "\t"; // Debugging
 		retStr += getCard(row, col).toString();
 	    }
 	    retStr += "\n";
