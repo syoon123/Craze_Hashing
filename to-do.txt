@@ -1,0 +1,23 @@
+To Do List
+
+Phase I - Skeleton
+*Create and finish Card.java
+*Create Board.java
+*Create Board.java’s methods for populating a deck, and display method
+*Create algorithms for dealing cards to the board
+*Create removing and card redistribution algorithms
+*Create Set.java
+Create parsing, set detection, and set verification algorithms
+Verify that each file is working
+Create basic gameplay
+
+Phase II - Polish
+Create user interface for Set.java
+Create instructions, about, etc.
+Create scoring mechanism
+Debug, fix anything that’s broken
+
+Phase III - Robustify
+Fine tune the scoring mechanism
+Robustify parsing algorithm to allow more user freedom
+Create more game modes (Endless? Pro Set? Time Attack?)
