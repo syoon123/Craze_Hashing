@@ -1,23 +1,51 @@
-To Do List
+To Do List - Command Line Set
+Team Craze Hashing
 
+Key:
+- To Complete
+* Completed
+? Optional
+================================================================================
 Phase I - Skeleton
-*Create and finish Card.java
-*Create Board.java
-*Create Board.java’s methods for populating a deck, and display method
-*Create algorithms for dealing cards to the board
-*Create removing and card redistribution algorithms
-*Create Set.java
-Create parsing, set detection, and set verification algorithms
-Verify that each file is working
-Create basic gameplay
-
+* Create and finish Card.java
+* Create Board.java
+* Create Board.java’s methods for populating a deck, and display method
+* Create algorithms for dealing cards to the board
+* Create removing and card redistribution algorithms
+* Create Set.java
+- Create parsing, set detection, and set verification algorithms
+  * Create parsing algorithm
+  - Create set verification algorithm (By 1/16)
+  - Create set detection algorithm (By 1/18)
+- Verify that each file is working
+  - Remove unnecessary methods (By 1/18)
+  - Change public methods to private ones as needed (By 1/18)
+- Create basic gameplay
+  - Add playability (By 1/19)
+  - Create rudimentary score system (By 1/19)
+================================================================================
 Phase II - Polish
-Create user interface for Set.java
-Create instructions, about, etc.
-Create scoring mechanism
-Debug, fix anything that’s broken
-
+- Create user interface for Set.java
+  - Give user choice to select game mode (By 1/20)
+- Create instructions, about, etc.
+  - Create about page (By 1/20)
+  - Create instructions page (By 1/20)
+  - Create credits page (By 1/20)
+- Create scoring mechanism
+  - Implement avgTime() (By 1/21)
+  - Implement final score display (By 1/21)
+- Debug, fix anything that’s broken
+  - Experiment, play Set! (By 1/22)
+  ? Send out for playtesting and feedback (By 1/22)
+================================================================================
 Phase III - Robustify
-Fine tune the scoring mechanism
-Robustify parsing algorithm to allow more user freedom
-Create more game modes (Endless? Pro Set? Time Attack?)
+- Fine tune the scoring mechanism (By 1/24)
+  ? Make Set implement different interfaces for scoring options (By 1/24)
+- Robustify parsing algorithm to allow more user freedom (By 1/24)
+  - Add error catching and throwing (By 1/24)
+  - Give user ability to quit in the middle of a game (By 1/24)
+? Create more game modes (Endless? Pro Set? Time Attack?)
+  ? Create Endless mode (By 1/25)
+  ? Create Pro Set (By 1/25)
+? Create a high-score system (By 1/25)
+  ? Create file-writing algorithm (By 1/25)
