@@ -10,10 +10,17 @@ Contributor:
 ================================================================================
 
 ================================================================================
-Date: 2016-01-14
-Contributor: SY+ZZ
-- Create isSet()
-- Create methods testing isSet()
+Date: 2016-01-15
+Contributor: ZZ
+- Create test cases for isSet()
+================================================================================
+
+================================================================================
+Date: 2016-01-15
+Contributor: SY
+- Defined helper method checkAttr(Obj,Obj,Obj) in Set.java, which checks if three values are all the same or all different (returns false otherwise)
+- Defined isSet(Card,Card,Card) which uses checkAttr to check each of the cards' attributes, and returns true if checkAttr() returns true for all of attributes.
+- Test cases needed
 ================================================================================
 
 ================================================================================
