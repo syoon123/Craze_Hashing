@@ -15,7 +15,7 @@ Phase I - Skeleton
 * Create Set.java
 - Create parsing, set detection, and set verification algorithms
   * Create parsing algorithm
-  - Create set verification algorithm (By 1/16)
+  * Create set verification algorithm (By 1/16)
   - Create set detection algorithm (By 1/18)
 - Verify that each file is working
   - Remove unnecessary methods (By 1/18)
