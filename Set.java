@@ -15,15 +15,34 @@ public class Set {
     private int numSets;
 
     // METHODS
+
+    //helper method for checking if any attr is allsame or alldiff
+    public boolean checkAttr(Object a, Object b, Object c) {
+	return (a.equals(b) && b.equals(a)) ||
+	    ((!(a.equals(b))) &&
+	     (!(b.equals(c))) &&
+	     (!(c.equals(a))));
+    }
+    
     public boolean isSet(Card a, Card b, Card c) {
-	return false; // TO ADD
+	Integer[] nums = { (Integer)a.getNum(), (Integer)b.getNum(), (Integer)c.getNum() };
+	String[] shapes = {a.getShape(), b.getShape(), c.getShape()};
+	String[] colors = {a.getColor(), b.getColor(), c.getColor()};
+	String[] shadings = {a.getShading(), b.getShading(), c.getShading()};
+
+	boolean checkNums = checkAttr(nums[0],nums[1],nums[2]);
+	boolean checkShapes = checkAttr(shapes[0],shapes[1],shapes[2]);
+	boolean checkColors = checkAttr(colors[0],colors[1],colors[2]);
+	boolean checkShadings = checkAttr(shadings[0],shadings[1],shadings[2]);
+
+	return checkNums && checkShapes && checkColors && checkShadings;
     }
 
     public double avgTime() {
 	return -1;
     }
 
-    // DIFFERENT VERSIONS OF GAME
+    // DIFFERENT VERSIONS OF GAME: Subject to change, interface??
     public void playTimeVersion() {
 
     }
