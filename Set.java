@@ -17,14 +17,14 @@ public class Set {
     // METHODS
 
     //helper method for checking if any attr is allsame or alldiff
-    public boolean checkAttr(Object a, Object b, Object c) {
+    public static boolean checkAttr(Object a, Object b, Object c) {
 	return (a.equals(b) && b.equals(a)) ||
 	    ((!(a.equals(b))) &&
 	     (!(b.equals(c))) &&
 	     (!(c.equals(a))));
     }
     
-    public boolean isSet(Card a, Card b, Card c) {
+    public static boolean isSet(Card a, Card b, Card c) {
 	Integer[] nums = { (Integer)a.getNum(), (Integer)b.getNum(), (Integer)c.getNum() };
 	String[] shapes = {a.getShape(), b.getShape(), c.getShape()};
 	String[] colors = {a.getColor(), b.getColor(), c.getColor()};
@@ -58,6 +58,21 @@ public class Set {
 		new BufferedReader(new InputStreamReader(System.in));
 	    input.mark(1000);
 	    System.out.println("Please choose three cards: ");
+
+	    /* Testing for set verification algorithm
+	    Card a = new Card(0,"red","O","[]");
+	    Card b = new Card(1,"green","S","{}");
+	    Card c = new Card(2,"blue","X","()");
+	    Card d = new Card(2,"green","X","()");
+	    Card e = new Card(2,"green","S","()");
+	    Card f = new Card(2,"green","O","{}");
+	    Card g = new Card(2,"green","X","[]");
+	    System.out.println(isSet(a,b,c)); // true
+	    System.out.println(isSet(a,b,d)); // false
+	    System.out.println(isSet(a,d,e)); // false
+	    System.out.println(isSet(e,f,g)); // true
+	    */
+	    
 	    int[] check = new int[6];
 	    int index = 0;
 	    while (!(input.ready())) { // While the reader has characters
