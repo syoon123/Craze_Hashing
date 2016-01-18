@@ -102,7 +102,7 @@ public class Board {
 	String retStr = "\t";
 	int size = board.get(0).size();
 	for (int i = 0; i < size; i++)
-	    retStr += i + "\t"; // Column Headings (0 - 9)
+	    retStr += i + "         "; // Column Headings (0 - 9)
 	retStr += "\n";
 	for (int row = 0; row < 3; row ++) {
 	    retStr += ALPHABET.substring(row,row+1) + "\t"; // Row Headings
