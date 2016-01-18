@@ -22,7 +22,7 @@ public class Algo {
         
         System.out.println(board);
         // SET EXISTENCE ALGO HERE
-        System.out.println(setExists(cards)); // There we go.
+        System.out.println(setExists(cards)); 
         
         
     }
