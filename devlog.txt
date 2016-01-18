@@ -17,6 +17,9 @@ Contributor: SY
 - Added a way to quit program at will
   - User types in "q" or "Q" instead of card coordinates
   - breaks out of outer loop
+- Addressed Issue #3, user can no longer select the same card three times and
+get a Set
+  - Added .equals() to Card.java
 ================================================================================
 
 ================================================================================
