@@ -63,6 +63,8 @@ public class Set {
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	Board board = new Board();
+
+	outerloop:
 	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
 	    System.out.println(board);
 		if (!setExists(board.getBoardCards())) {
@@ -83,6 +85,15 @@ public class Set {
 		while (!(input.ready())) { // While the reader has characters
 		    while (index < 6) {
 			int i = input.read();
+			if (i == 68 || i == 100){
+			    board.drawAll();
+			    board.distribute();
+			    break;
+			}
+			if (i == 81 || i == 113) {
+			    System.out.println("Good game, mate!");
+			    break outerloop;
+			}
 			if (i < 48) // Button presses, not useful for parsing.
 			    continue;
 			else if (i < 58) // 0 to 9
