@@ -32,7 +32,7 @@ public class Board {
     public ArrayList<Card> removeSet(int r1, int c1, int r2, int c2, int r3, int c3) {
 	ArrayList<Card> ret = new ArrayList<Card>();
 	int[][] indices = { {r1, c1}, {r2, c2}, {r3, c3} };
-	for (int i=2; i>1; i--) {
+	for (int i=2; i>0; i--) {
 	    if (indices[i][1] > indices[i-1][1]) {
 		int[] temp = indices[i];
 		indices[i] = indices[i-1];
@@ -42,6 +42,7 @@ public class Board {
 	for (int[] a : indices) {
 	    ret.add(removeCard(a[0], a[1]));
 	}
+	distribute();
 	return ret;
     }
 
@@ -138,7 +139,7 @@ public class Board {
 	board.drawAll();
 	System.out.println(board);
 	//System.out.println(board.getBoardCards());
-	board.removeSet(0,0,2,0,2,1);
+	board.removeSet(0,0,0,1,0,2);
 	System.out.println(board);
     }
 }
