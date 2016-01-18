@@ -97,21 +97,15 @@ public class Board {
 	resetNumCards();
     }
 
-    public void distribute() { // Can't test right now, don't have mechanism for selecting cards
-	int rowLength = (numCards + 1)/3; // num of cards each row should have
-	ArrayList<Card> stash = new ArrayList<Card>(); // temp storage of cards to be moved
-	for (ArrayList<Card> al : board) {
-	    if (al.size() > rowLength) { // chop off cards past average row size, store to be readded 
-		for(Card b : al) {
-		    stash.add(b); 
-		}
-	    }
-	}
-	for (ArrayList<Card> al : board) {
-	    while (al.size()<rowLength) { // tack on cards until row reaches average size
+    public void distribute() { 
+	int rowLength = numCards / 3; // Number of Cards in each row.
+	ArrayList<Card> stash = new ArrayList<Card>(); // Card Storage
+	for (ArrayList<Card> al : board) // Cutting off the excess...
+	    while (al.size() > rowLength)
+		stash.add(al.remove(al.size()-1)); // Take off the last card.
+	for (ArrayList<Card> al : board) // And distributing it.
+	    while (al.size() < rowLength) // Tack on cards until row reaches correct size
 		al.add(stash.remove(0)); // move cards from stash to new spots
-	    }
-	}	    
     }
 
     // METHODS - VERIFICATION
