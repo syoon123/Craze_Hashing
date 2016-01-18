@@ -138,7 +138,7 @@ public class Board {
 	board.drawAll();
 	System.out.println(board);
 	//System.out.println(board.getBoardCards());
-	board.removeSet(0,0,0,1,0,2);
+	board.removeSet(0,0,2,0,2,1);
 	System.out.println(board);
     }
 }
