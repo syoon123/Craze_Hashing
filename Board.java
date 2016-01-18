@@ -41,6 +41,9 @@ public class Board {
     public ArrayList<Card> getDeckCards() {
 	return deck;
     }
+    public int getDeckSize() {
+	return deck.size();
+    }
     public ArrayList<Card> getBoardCards() {
 	ArrayList<Card> cards = new ArrayList<Card>();
 	for (ArrayList<Card> al : board)
@@ -48,11 +51,12 @@ public class Board {
 		cards.add(al.get(i));
 	return cards;
     }
-    
+
     public int resetNumCards() {
 	int total = 0;
 	for (ArrayList al : board)
 	    total += al.size();
+	numCards = total;
 	return total;
     }
 
