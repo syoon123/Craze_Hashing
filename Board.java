@@ -38,6 +38,17 @@ public class Board {
 	return ret;
     }
 
+    public ArrayList<Card> getDeckCards() {
+	return deck;
+    }
+    public ArrayList<Card> getBoardCards() {
+	ArrayList<Card> cards = new ArrayList<Card>();
+	for (ArrayList<Card> al : board)
+	    for (int i = 0; i < al.size(); i++)
+		cards.add(al.get(i));
+	return cards;
+    }
+    
     public int resetNumCards() {
 	int total = 0;
 	for (ArrayList al : board)
@@ -121,5 +132,6 @@ public class Board {
 	System.out.println(board);
 	board.drawAll();
 	System.out.println(board);
+	System.out.println(board.getBoardCards());
     }
 }
