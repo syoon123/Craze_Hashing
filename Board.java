@@ -31,18 +31,17 @@ public class Board {
     }
     public ArrayList<Card> removeSet(int r1, int c1, int r2, int c2, int r3, int c3) {
 	ArrayList<Card> ret = new ArrayList<Card>();
-	// Change the indices, to avoid IndexOutOfBoundsException
-	if (r1 == r2) // Card 1 and Card 2 are in the same row.
-	    if (c1 < c2) c2 -= 1; // Shift c2 left one.
-	if (r1 == r3) // Card 1 and Card 3 are in the same row.
-	    if (c1 < c3) c3 -= 1; // Shift c3 left one.
-	if (r2 == r3) // Card 2 and Card 3 are in the same row.
-	    if (c2 < c3) c3 -= 1; // Shift c3 left one.
-	
-	ret.add(removeCard(r1,c1));
-	ret.add(removeCard(r2,c2));
-	ret.add(removeCard(r3,c3));
-	resetNumCards();
+	int[][] indices = { {r1, c1}, {r2, c2}, {r3, c3} };
+	for (int i=2; i>1; i--) {
+	    if (indices[i][1] > indices[i-1][1]) {
+		int[] temp = indices[i];
+		indices[i] = indices[i-1];
+		indices[i-1] = temp;
+	    }
+	}
+	for (int[] a : indices) {
+	    ret.add(removeCard(a[0], a[1]));
+	}
 	return ret;
     }
 
@@ -144,6 +143,8 @@ public class Board {
 	System.out.println(board);
 	board.drawAll();
 	System.out.println(board);
-	System.out.println(board.getBoardCards());
+	//System.out.println(board.getBoardCards());
+	board.removeSet(0,0,0,1,0,2);
+	System.out.println(board);
     }
 }
