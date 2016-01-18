@@ -42,7 +42,7 @@ public class Set {
             for (int j = i+1; j < size - 1; j++)
                 for (int k = j+1; k < size; k++)
                     if (Set.isSet(cards.get(i), cards.get(j), cards.get(k))) {
-                        System.out.println(i + "\t" + j + "\t" + k); // Debugging
+                        // System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }
         return false;
@@ -63,9 +63,13 @@ public class Set {
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	Board board = new Board();
-	while (board.getDeckSize() > 0 ||
-	       setExists(board.getBoardCards())) { // Game Loop
+	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
 	    System.out.println(board);
+		if (!setExists(board.getBoardCards())) {
+			System.out.println("No possible sets: drawing...");
+			board.drawAll();
+			continue;
+		}
 	    int[] check = new int[6]; // For Input Parsing
 	    
 	    while (true) { // Input Loop
