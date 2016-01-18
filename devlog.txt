@@ -15,6 +15,9 @@ Contributor: SY + ZZ
 - planned set finding algo!
 - ZZ: implemented in test class, Algo.java
 - SY: added to Set.java
+- implemented gameplay loop
+- for tomorrow: draw-at-will, quit-at-will, invalid entry errors, repeat card
+errors
 ================================================================================
 
 ================================================================================
