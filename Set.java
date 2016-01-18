@@ -40,6 +40,18 @@ public class Set {
 	return checkNums && checkShapes && checkColors && checkShadings;
     }
 
+    public static boolean setExists(ArrayList<Card> cards) {
+        int size = cards.size();
+        for (int i = 0; i < size - 2; i++)
+            for (int j = i+1; j < size - 1; j++)
+                for (int k = i+2; k < size; k++)
+                    if (Set.isSet(cards.get(i), cards.get(j), cards.get(k))) {
+                        System.out.println(i + "\t" + j + "\t" + k); // Debugging
+                        return true;
+                    }
+        return false;
+    }
+
     public double avgTime() {
 	return -1;
     }
