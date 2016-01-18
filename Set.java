@@ -18,7 +18,7 @@ public class Set {
 
     //helper method for checking if any attr is allsame or alldiff
     public static boolean checkAttr(Object a, Object b, Object c) {
-	return (a.equals(b) && b.equals(a)) ||
+	return (a.equals(b) && b.equals(c)) || // FIXED
 	    ((!(a.equals(b))) &&
 	     (!(b.equals(c))) &&
 	     (!(c.equals(a))));
