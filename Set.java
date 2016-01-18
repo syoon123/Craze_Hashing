@@ -5,18 +5,14 @@ import java.io.*;
 
 public class Set {
     // INSTANCE VARIABLES
-    // I don't think we need this, to be honest.
-    // Maybe we can try implementing interfaces with different game modes?
-    // for "time per set" version of game
     private ArrayList<Double> times = new ArrayList<Double>();
 
-    // for "sprint" version of game
+    // SPRINT VERSION - INSTANCE VARIABLES
     private double timeLimit;
     private int numSets;
 
     // METHODS
-
-    //helper method for checking if any attr is allsame or alldiff
+    // helper method for checking if any attr is allsame or alldiff
     public static boolean checkAttr(Object a, Object b, Object c) {
 	return (a.equals(b) && b.equals(c)) || // All same.
 	    ((!(a.equals(b))) && // All different.
@@ -24,6 +20,7 @@ public class Set {
 	     (!(c.equals(a))));
     }
     
+    // SET VERIFICATION ALGORITHM
     public static boolean isSet(Card a, Card b, Card c) {
 	Integer[] nums = { (Integer)a.getNum(), (Integer)b.getNum(), (Integer)c.getNum() };
 	String[] shapes = { a.getShape(), b.getShape(), c.getShape() };
@@ -38,6 +35,7 @@ public class Set {
 	return checkNums && checkShapes && checkColors && checkShadings;
     }
 
+	// SET EXISTENCE ALGORITHM
     public static boolean setExists(ArrayList<Card> cards) {
         int size = cards.size();
         for (int i = 0; i < size - 2; i++)
@@ -56,15 +54,14 @@ public class Set {
 
     // DIFFERENT VERSIONS OF GAME: Subject to change, interface??
     public void playTimeVersion() {
-
+		;
     }
-
     public void playSprintVersion() {
-
+		;
     }
 
     // MAIN
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	while (true) { // Input Loop
 	    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 	    input.mark(1000);
