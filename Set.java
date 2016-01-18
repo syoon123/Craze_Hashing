@@ -85,12 +85,12 @@ public class Set {
 		while (!(input.ready())) { // While the reader has characters
 		    while (index < 6) {
 			int i = input.read();
-			if (i == 68 || i == 100){
+			if (i == 68 || i == 100){ // D or d
 			    board.drawAll();
 			    board.distribute();
 			    break;
 			}
-			if (i == 81 || i == 113) {
+			if (i == 81 || i == 113) { // Q or q
 			    System.out.println("Good game, mate!");
 			    break outerloop;
 			}
