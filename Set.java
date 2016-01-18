@@ -20,15 +20,17 @@ public class Set {
     public static boolean checkAttr(Object a, Object b, Object c) {
 	return (a.equals(b) && b.equals(c)) || // FIXED
 	    ((!(a.equals(b))) &&
+	return (a.equals(b) && b.equals(c)) || // All same.
+	    ((!(a.equals(b))) && // All different.
 	     (!(b.equals(c))) &&
 	     (!(c.equals(a))));
     }
     
     public static boolean isSet(Card a, Card b, Card c) {
 	Integer[] nums = { (Integer)a.getNum(), (Integer)b.getNum(), (Integer)c.getNum() };
-	String[] shapes = {a.getShape(), b.getShape(), c.getShape()};
-	String[] colors = {a.getColor(), b.getColor(), c.getColor()};
-	String[] shadings = {a.getShading(), b.getShading(), c.getShading()};
+	String[] shapes = { a.getShape(), b.getShape(), c.getShape() };
+	String[] colors = { a.getColor(), b.getColor(), c.getColor() };
+	String[] shadings = { a.getShading(), b.getShading(), c.getShading() };
 
 	boolean checkNums = checkAttr(nums[0],nums[1],nums[2]);
 	boolean checkShapes = checkAttr(shapes[0],shapes[1],shapes[2]);
