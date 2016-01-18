@@ -48,6 +48,13 @@ public class Card {
 	return color + retStr +"\u001B[0m";
     }
 
+    public boolean equals(Card c) {
+	return (num==c.getNum()) &&
+	    (color.equals(c.getColor())) &&
+	    (shape.equals(c.getShape())) &&
+	    (shading.equals(c.getShading()));
+    }
+
     public int setNum(int n) {
 	int ret = getNum();
 	num = n;

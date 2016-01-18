@@ -11,6 +11,16 @@ Contributor:
 
 ================================================================================
 Date: 2016-01-17
+Contributor: SY
+- Added a way to draw cards at will
+  - User types in "r" or "R" instead of card coordinates
+- Added a way to quit program at will
+  - User types in "q" or "Q" instead of card coordinates
+  - breaks out of outer loop
+================================================================================
+
+================================================================================
+Date: 2016-01-17
 Contributor: ZZ
 - Add gameplay loop to Set.java
   - Create two outer loops
