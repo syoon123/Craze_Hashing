@@ -120,16 +120,21 @@ public class Set {
 		    Card c1 = board.getCard(check[0],check[1]);
 		    Card c2 = board.getCard(check[2],check[3]);
 		    Card c3 = board.getCard(check[4],check[5]);
-		    if (isSet(c1,c2,c3)) { // Is A Set
-			System.out.println("Booyah!");
-			board.removeSet(check[0],check[1],
-					check[2],check[3],
-					check[4],check[5]);
-			if (board.resetNumCards() < 9) // Always more than 9 cards
-			    board.drawAll();
-			board.distribute();
-		    } else { // Not A Set
-			System.out.println("Nope!");
+		    if (c1.equals(c2) || c2.equals(c3) || c3.equals(c1)) {
+			System.out.println("Nope! You can't repeat cards!");
+		    }
+		    else {
+			if (isSet(c1,c2,c3)) { // Is A Set
+			    System.out.println("Booyah!");
+			    board.removeSet(check[0],check[1],
+					    check[2],check[3],
+					    check[4],check[5]);
+			    if (board.resetNumCards() < 9) // Always more than 9 cards
+				board.drawAll();
+			    board.distribute();
+			} else { // Not A Set
+			    System.out.println("Nope!");
+			}
 		    }
 		} catch (IndexOutOfBoundsException ex) {
 		    System.out.println("ERROR: Please input valid cards!");
