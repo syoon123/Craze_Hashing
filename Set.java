@@ -35,7 +35,7 @@ public class Set {
 	return checkNums && checkShapes && checkColors && checkShadings;
     }
 
-	// SET EXISTENCE ALGORITHM
+    // SET EXISTENCE ALGORITHM
     public static boolean setExists(ArrayList<Card> cards) {
         int size = cards.size();
         for (int i = 0; i < size - 2; i++)
@@ -47,19 +47,7 @@ public class Set {
                     }
         return false;
     }
-
-    public double avgTime() {
-	return -1;
-    }
-
-    // DIFFERENT VERSIONS OF GAME: Subject to change, interface??
-    public void playTimeVersion() {
-		;
-    }
-    public void playSprintVersion() {
-		;
-    }
-
+    
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	Board board = new Board();
@@ -67,13 +55,13 @@ public class Set {
 	outerloop:
 	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
 	    System.out.println(board);
-		if (!setExists(board.getBoardCards())) {
-			System.out.println("No possible sets: drawing...");
-			board.drawAll();
-			continue;
-		}
+	    if (!setExists(board.getBoardCards())) {
+		System.out.println("No possible sets: drawing...");
+		board.drawAll();
+		continue;
+	    }
 	    int[] check = new int[6]; // For Input Parsing
-	    
+	    parseloop:
 	    while (true) { // Input Loop
 		for (int i = 0; i < 6; i++)
 		    check[i] = -1; // Default fill for parsing.
@@ -86,9 +74,15 @@ public class Set {
 		    while (index < 6) {
 			int i = input.read();
 			if (i == 68 || i == 100){
-			    board.drawAll();
-			    board.distribute();
-			    break;
+			    if (board.getDeckSize() > 0) {
+				board.drawAll();
+				board.distribute();
+				System.out.println("Drawing more cards...");
+			    } else {
+				System.out.println("There are no more cards in the deck!");
+			    }
+			    System.out.println(board);
+			    continue parseloop;
 			}
 			if (i == 81 || i == 113) {
 			    System.out.println("Good game, mate!");
