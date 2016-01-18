@@ -11,6 +11,21 @@ Contributor:
 
 ================================================================================
 Date: 2016-01-17
+Contributor: ZZ
+- Add gameplay loop to Set.java
+  - Create two outer loops
+    - Separate input loop
+    - Create verification loop
+  - Create card drawing mechanism
+- Modify Board.java
+  - Add getDeckSize()
+  - Fix resetNumCards()
+- Issue #3: Choosing same card yields true for isSet()
+- Issue ??: Need to debug error throwing in Set.java
+================================================================================
+
+================================================================================
+Date: 2016-01-17
 Contributor: SY + ZZ
 - planned set finding algo!
 - ZZ: implemented in test class, Algo.java
