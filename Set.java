@@ -18,8 +18,6 @@ public class Set {
 
     //helper method for checking if any attr is allsame or alldiff
     public static boolean checkAttr(Object a, Object b, Object c) {
-	return (a.equals(b) && b.equals(c)) || // FIXED
-	    ((!(a.equals(b))) &&
 	return (a.equals(b) && b.equals(c)) || // All same.
 	    ((!(a.equals(b))) && // All different.
 	     (!(b.equals(c))) &&
@@ -68,24 +66,9 @@ public class Set {
     // MAIN
     public static void main(String[] args) throws IOException {
 	while (true) { // Input Loop
-	    BufferedReader input =
-		new BufferedReader(new InputStreamReader(System.in));
+	    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 	    input.mark(1000);
 	    System.out.println("Please choose three cards: ");
-
-	    /* Testing for set verification algorithm
-	    Card a = new Card(0,"red","O","[]");
-	    Card b = new Card(1,"green","S","{}");
-	    Card c = new Card(2,"blue","X","()");
-	    Card d = new Card(2,"green","X","()");
-	    Card e = new Card(2,"green","S","()");
-	    Card f = new Card(2,"green","O","{}");
-	    Card g = new Card(2,"green","X","[]");
-	    System.out.println(isSet(a,b,c)); // true
-	    System.out.println(isSet(a,b,d)); // false
-	    System.out.println(isSet(a,d,e)); // false
-	    System.out.println(isSet(e,f,g)); // true
-	    */
 	    
 	    int[] check = new int[6];
 	    int index = 0;
