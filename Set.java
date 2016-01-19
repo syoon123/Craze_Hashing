@@ -7,10 +7,6 @@ public class Set {
     // INSTANCE VARIABLES
     private ArrayList<Double> times = new ArrayList<Double>();
 
-    // SPRINT VERSION - INSTANCE VARIABLES
-    private double timeLimit;
-    private int numSets;
-
     // METHODS
     // helper method for checking if any attr is allsame or alldiff
     public static boolean checkAttr(Object a, Object b, Object c) {
@@ -136,5 +132,6 @@ public class Set {
 		break;
 	    } // End Set Verification Loop
 	} // End Game Loop
+	System.out.println("Game over!");
     }
 }
