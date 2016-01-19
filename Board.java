@@ -32,16 +32,17 @@ public class Board {
     public ArrayList<Card> removeSet(int r1, int c1, int r2, int c2, int r3, int c3) {
 	ArrayList<Card> ret = new ArrayList<Card>();
 	int[][] indices = { {r1, c1}, {r2, c2}, {r3, c3} };
-	for (int i=2; i>0; i--) {
-	    if (indices[i][1] > indices[i-1][1]) {
-		int[] temp = indices[i];
-		indices[i] = indices[i-1];
-		indices[i-1] = temp;
-	    }
-	}
+	for (int passes = 0; passes < 2; passes++)
+	    for (int i = 2; i > 0; i--)
+		if (indices[i][1] > indices[i-1][1]) {
+		    int[] temp = indices[i];
+		    indices[i] = indices[i-1];
+		    indices[i-1] = temp; 
+		}
 	for (int[] a : indices) {
 	    ret.add(removeCard(a[0], a[1]));
 	}
+	// for (int[] i : indices) System.out.println(Arrays.toString(i));
 	distribute();
 	return ret;
     }
@@ -124,8 +125,8 @@ public class Board {
 	for (int row = 0; row < 3; row ++) {
 	    retStr += ALPHABET.substring(row,row+1) + "\t"; // Row Headings
 	    for (int col = 0; col < size; col++) {
-		// retStr += row + "," + col + "\t"; // Debugging
-		retStr += getCard(row, col).toString();
+		retStr += row + "," + col + "\t"; // Debugging
+		// retStr += getCard(row, col).toString();
 	    }
 	    retStr += "\n";
 	}
