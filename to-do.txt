@@ -23,6 +23,7 @@ Phase I - Skeleton
 - Create basic gameplay
   * Add playability (By 1/19)
   - Create rudimentary score system (By 1/19)
+  - "You Win" Message once all Sets are found (By 1/20)
 ================================================================================
 Phase II - Polish
 - Create user interface for Set.java
