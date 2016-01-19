@@ -125,8 +125,8 @@ public class Board {
 	for (int row = 0; row < 3; row ++) {
 	    retStr += ALPHABET.substring(row,row+1) + "\t"; // Row Headings
 	    for (int col = 0; col < size; col++) {
-		retStr += row + "," + col + "\t"; // Debugging
-		// retStr += getCard(row, col).toString();
+		// retStr += row + "," + col + "\t"; // Debugging for Windows
+		retStr += getCard(row, col).toString();
 	    }
 	    retStr += "\n";
 	}
