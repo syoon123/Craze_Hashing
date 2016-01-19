@@ -84,7 +84,7 @@ public class Set {
 			    System.out.println(board);
 			    continue parseloop;
 			}
-			if (i == 81 || i == 113) {
+			if (i == 81 || i == 113) { // Q or q
 			    System.out.println("Good game, mate!");
 			    break outerloop;
 			}
