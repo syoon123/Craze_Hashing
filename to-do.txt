@@ -17,13 +17,13 @@ Phase I - Skeleton
   * Create parsing algorithm
   * Create set verification algorithm (By 1/16)
   * Create set detection algorithm (By 1/18)
-- Verify that each file is working
+* Verify that each file is working
   - Remove unnecessary methods (By 1/18)
   - Change public methods to private ones as needed (By 1/18)
-- Create basic gameplay
+* Create basic gameplay
   * Add playability (By 1/19)
-  - Create rudimentary score system (By 1/19)
-  - "You Win" Message once all Sets are found (By 1/20)
+  * Create rudimentary score system (By 1/19)
+  * "You Win" Message once all Sets are found (By 1/20)
 ================================================================================
 Phase II - Polish
 - Create user interface for Set.java
@@ -32,9 +32,9 @@ Phase II - Polish
   - Create about page (By 1/20)
   - Create instructions page (By 1/20)
   - Create credits page (By 1/20)
-- Create scoring mechanism
-  - Implement avgTime() (By 1/21)
-  - Implement final score display (By 1/21)
+* Create scoring mechanism
+  * Implement calcScore() (By 1/21)
+  * Implement final score display (By 1/21)
 - Debug, fix anything that’s broken
   - Experiment, play Set! (By 1/22)
   ? Send out for playtesting and feedback (By 1/22)
