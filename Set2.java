@@ -43,6 +43,14 @@ public class Set {
                     }
         return false;
     }
+
+    // CLEAR CONSOLE
+    private static void clear(){
+        final String clear = "\u001b[2J";
+        final String home = "\u001b[H";
+        System.out.print(clear + home);
+        System.out.flush();
+    }
     
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
