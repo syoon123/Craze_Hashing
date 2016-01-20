@@ -55,7 +55,7 @@ public class Set2 {
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	Board board = new Board();
-
+	ArrayList<Long> times = new ArrayList<Long>();
 	outerloop:
 	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
 	    System.out.println(board);
