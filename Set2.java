@@ -3,7 +3,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Set {
+public class Set2 {
     // INSTANCE VARIABLES
     private ArrayList<Double> times = new ArrayList<Double>();
 
@@ -67,9 +67,9 @@ public class Set {
 	    int[] check = new int[6]; // For Input Parsing
 	    parseloop:
 	    while (true) { // Input Loop
+		
 		for (int i = 0; i < 6; i++)
 		    check[i] = -1; // Default fill for parsing.
-		
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		input.mark(1000);
 		System.out.println("Please choose three cards: ");
@@ -87,6 +87,10 @@ public class Set {
 			    }
 			    System.out.println(board);
 			    continue parseloop;
+			}
+			if (i == 88 || i == 120) { // X or x
+			    clear();
+			    break parseloop;
 			}
 			if (i == 81 || i == 113) { // Q or q
 			    System.out.println("Good game, mate!");
