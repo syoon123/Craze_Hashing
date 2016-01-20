@@ -4,9 +4,6 @@ import java.util.*;
 import java.io.*;
 
 public class Set2 {
-    // INSTANCE VARIABLES
-    private ArrayList<Double> times = new ArrayList<Double>();
-
     // METHODS
     // helper method for checking if any attr is allsame or alldiff
     public static boolean checkAttr(Object a, Object b, Object c) {
@@ -31,6 +28,17 @@ public class Set2 {
 	return checkNums && checkShapes && checkColors && checkShadings;
     }
 
+    // SCORE CALCULATION ALGORITHM - STANDARD GAME
+    public static double calcScore(ArrayList<Long> times) {
+	int size = times.size();
+	if (size == 0) return 999.999;
+	double totalTime = 0;
+	for (Long time : times)
+	    totalTime += (double)time; // Calculate total time taken
+	double avgTime = totalTime / size; // Average time per set
+	return avgTime / 1000; // Change from milliseconds to seconds
+    }
+
     // SET EXISTENCE ALGORITHM
     public static boolean setExists(ArrayList<Card> cards) {
         int size = cards.size();
@@ -38,7 +46,7 @@ public class Set2 {
             for (int j = i+1; j < size - 1; j++)
                 for (int k = j+1; k < size; k++)
                     if (Set.isSet(cards.get(i), cards.get(j), cards.get(k))) {
-                        // System.out.println(i + "\t" + j + "\t" + k); // Debugging
+                        System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }
         return false;
@@ -46,16 +54,20 @@ public class Set2 {
 
     // CLEAR CONSOLE
     private static void clear(){
-        final String clear = "\u001b[2J";
-        final String home = "\u001b[H";
+        String clear = "\u001b[2J";
+        String home = "\u001b[H";
         System.out.print(clear + home);
         System.out.flush();
     }
     
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
+	// Variables
 	Board board = new Board();
 	ArrayList<Long> times = new ArrayList<Long>();
+	long curTime = -1L;
+
+	// Gameplay
 	outerloop:
 	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
 	    System.out.println(board);
@@ -65,9 +77,10 @@ public class Set2 {
 		continue;
 	    }
 	    int[] check = new int[6]; // For Input Parsing
+	    if (curTime < 0)
+		curTime = System.currentTimeMillis(); // Timing for score.
 	    parseloop:
 	    while (true) { // Input Loop
-		
 		for (int i = 0; i < 6; i++)
 		    check[i] = -1; // Default fill for parsing.
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
@@ -127,6 +140,10 @@ public class Set2 {
 		    }
 		    else {
 			if (isSet(c1,c2,c3)) { // Is A Set
+			    curTime = System.currentTimeMillis() - curTime; // Find time it took to find a set.
+			    times.add(curTime);
+			    System.out.println("Times: " + times + "\n" + "Time for last set:\t" + curTime); // Debugging
+			    curTime = -1L;
 			    System.out.println("Booyah!");
 			    board.removeSet(check[0],check[1],
 					    check[2],check[3],
@@ -144,6 +161,9 @@ public class Set2 {
 		break;
 	    } // End Set Verification Loop
 	} // End Game Loop
-	System.out.println("Game over!");
+	// Score Display
+
+	System.out.println("\nGame over!");
+	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
     }
 }
