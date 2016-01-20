@@ -90,7 +90,7 @@ public class Set2 {
 			}
 			if (i == 88 || i == 120) { // X or x
 			    clear();
-			    break parseloop;
+			    continue outerloop;
 			}
 			if (i == 81 || i == 113) { // Q or q
 			    System.out.println("Good game, mate!");
