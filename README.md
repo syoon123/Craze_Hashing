@@ -2,7 +2,7 @@
 ### By Team Craze_Hashing
 
 ## Description
-_To be added_
+Command Line Set is the classic game of Set _insert link_ for Unix-based command line terminals. 
 
 ## Gameplay
 _To be added_
