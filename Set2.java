@@ -174,5 +174,6 @@ public class Set2 {
 	ScoreParser sp = new ScoreParser("HighScores.txt",
 					 "Generic Name",
 					 (calcScore(times) + ""));
+	System.out.println("Score saved!");
     }
 }

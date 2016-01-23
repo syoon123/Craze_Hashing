@@ -23,14 +23,16 @@ public class ScoreParser {
     	} catch (FileNotFoundException ex) {
     	    System.out.println("Creating high scores file in " + _file + "...");
     	    PrintWriter newFile = new PrintWriter(new File(_file));
-    	    newFile.flush();
+    	    newFile.println(_newScore[0] + delimiter1 + _newScore[1]);
     	    newFile.close();
+	    return; // Terminate early...?
     	}
     	
     	// Formatting Algorithm -- Interpret the buffer.
     	format(_newScore);
 
 	// Writing Algorithm -- Write to the file.
+	write();
     }
     // Parse buffer into ArrayList -- scores.
 
@@ -40,20 +42,24 @@ public class ScoreParser {
         while (sc.hasNext()) {
             ret += sc.nextLine() + delimiter2; // Must be different from delimiter in highscores file 
         }
-	System.out.println(ret); // Debugging
+	// System.out.println(ret); // Debugging
 	return ret;
     }
-    public String write() {
-	return "";
+    public void write() throws FileNotFoundException {
+	PrintWriter pw = new PrintWriter(new File(_file));
+	for (int i = 0; i < _scores.length; i++) {
+	    pw.println(_scores[i][0] + delimiter1 + _scores[i][1]);
+	}
+	pw.close();
     }
 
     public void format(String[] newScore) { // Changes _buffer into _scores
 	// Temporary
 	String[] score = newScore;
-	
-        String[] scoreList = _buffer.split(delimiter2);
+	String[] scoreList = _buffer.split(delimiter2);
         ArrayList<String[]> temp = new ArrayList<String[]>();
         // System.out.println(scoreList.length); // Debugging
+
         for (int i = 0; i < scoreList.length; i++) {
             temp.add(scoreList[i].split(delimiter1));
         }
