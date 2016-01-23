@@ -46,12 +46,8 @@ public class Board {
 	distribute();
 	return ret;
     }
-
     public ArrayList<Card> getDeckCards() {
 	return deck;
-    }
-    public int getDeckSize() {
-	return deck.size();
     }
     public ArrayList<Card> getBoardCards() {
 	ArrayList<Card> cards = new ArrayList<Card>();
@@ -59,6 +55,9 @@ public class Board {
 	    for (int i = 0; i < al.size(); i++)
 		cards.add(al.get(i));
 	return cards;
+    }
+    public int getDeckSize() {
+	return deck.size();
     }
 
     public int resetNumCards() {
@@ -109,12 +108,7 @@ public class Board {
 	    while (al.size() < rowLength) // Tack on cards until row reaches correct size
 		al.add(stash.remove(0)); // move cards from stash to new spots
     }
-
-    // METHODS - VERIFICATION
-    public boolean setExists() {
-	return false; // DO LATER
-    }
-
+    
     // METHODS - PRINT BOARD
     public String toString() { // there might be an issue with this??
 	String retStr = "\t";
