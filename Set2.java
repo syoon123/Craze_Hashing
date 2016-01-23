@@ -171,6 +171,8 @@ public class Set2 {
 	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
 	
 	// Writing to High Scores
-	ScoreParser sp = new ScoreParser("HighScores.txt");
+	ScoreParser sp = new ScoreParser("HighScores.txt",
+					 "Generic Name",
+					 (calcScore(times) + ""));
     }
 }
