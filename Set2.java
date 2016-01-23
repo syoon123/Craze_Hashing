@@ -169,5 +169,8 @@ public class Set2 {
 
 	System.out.println("\nGame over!");
 	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
+	
+	// Writing to High Scores
+	ScoreParser sp = new ScoreParser("HighScores.txt");
     }
 }
