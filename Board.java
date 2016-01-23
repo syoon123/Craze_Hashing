@@ -59,7 +59,9 @@ public class Board {
     public int getDeckSize() {
 	return deck.size();
     }
-
+    public int getBoardSize() {
+	return getBoardCards().size();
+    }
     public int resetNumCards() {
 	int total = 0;
 	for (ArrayList al : board)

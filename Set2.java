@@ -92,9 +92,13 @@ public class Set2 {
 			int i = input.read();
 			if (i == 68 || i == 100){
 			    if (board.getDeckSize() > 0) {
-				board.drawAll();
-				board.distribute();
-				System.out.println("Drawing more cards...");
+				if (board.getBoardSize() >= 21)
+				    System.out.println("Please do not overdraw!");
+				else {
+				    board.drawAll();
+				    board.distribute();
+				    System.out.println("Drawing more cards...");
+				}
 			    } else {
 				System.out.println("There are no more cards in the deck!");
 			    }
@@ -165,5 +169,8 @@ public class Set2 {
 
 	System.out.println("\nGame over!");
 	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
+	
+	// Writing to High Scores
+	ScoreParser sp = new ScoreParser("HighScores.txt");
     }
 }
