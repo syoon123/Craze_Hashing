@@ -8,7 +8,7 @@ public class Algo {
         for (int i = 0; i < size - 2; i++)
             for (int j = i+1; j < size - 1; j++)
                 for (int k = i+2; k < size; k++)
-                    if (Set.isSet(cards.get(i), cards.get(j), cards.get(k))) {
+                    if (Set1.isSet(cards.get(i), cards.get(j), cards.get(k))) {
                         System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }
@@ -23,7 +23,5 @@ public class Algo {
         System.out.println(board);
         // SET EXISTENCE ALGO HERE
         System.out.println(setExists(cards)); 
-        
-        
     }
 }

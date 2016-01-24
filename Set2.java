@@ -1,4 +1,5 @@
-// Temp Class Set, so working Set.java doesn't get corrupted.
+// Set 2 - Sprint Mode
+// Scoring Mechanism - Sets found within a set time limit. 
 
 import java.util.*;
 import java.io.*;
@@ -45,7 +46,7 @@ public class Set2 {
         for (int i = 0; i < size - 2; i++)
             for (int j = i+1; j < size - 1; j++)
                 for (int k = j+1; k < size; k++)
-                    if (Set.isSet(cards.get(i), cards.get(j), cards.get(k))) {
+                    if (isSet(cards.get(i), cards.get(j), cards.get(k))) {
                         System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }

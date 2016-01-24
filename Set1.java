@@ -1,9 +1,10 @@
-// Temp Class Set, so working Set.java doesn't get corrupted.
+// Set 1 - Standard Game Mode
+// Scoring Mechanism - Average Time
 
 import java.util.*;
 import java.io.*;
 
-public class Set2 {
+public class Set1 {
     // METHODS
     // helper method for checking if any attr is allsame or alldiff
     public static boolean checkAttr(Object a, Object b, Object c) {
@@ -45,7 +46,7 @@ public class Set2 {
         for (int i = 0; i < size - 2; i++)
             for (int j = i+1; j < size - 1; j++)
                 for (int k = j+1; k < size; k++)
-                    if (Set.isSet(cards.get(i), cards.get(j), cards.get(k))) {
+                    if (isSet(cards.get(i), cards.get(j), cards.get(k))) {
                         System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }
