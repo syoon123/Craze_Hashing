@@ -42,7 +42,7 @@ Some examples of Sets:
 These are NOT Sets:
  1. {O} (OO) {OOO} // There are two cards with curly braces, and one with parentheses.
  2. [S] {OO} (OOO) // There are two cards with shape O, and one card with shape S.
- 3. {X} [O] (SS) // There are two cards with size 1, and one card with size 2.
+ 3. {X} {O} {SS} // There are two cards with size 1, and one card with size 2.
 
 9 cards are placed on the board. If there are no possible Sets, 3 more cards will be dealt. To select 3 cards that you think make a Set, type in their coordinates in the form “A0”. Neither capitalization nor whitespace matters.
 
