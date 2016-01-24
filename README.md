@@ -26,32 +26,32 @@ Spring mode plays like the original game of Set, except the user has 3 minutes t
 ## Instructions
 The objective of the game is to identify Sets of 3 cards from the cards placed on the board. Each card has four features, which can vary as follows:
 
-Shape: O, S, or X
-Color: RED, GREEN, or BLUE
-Number: 1, 2, or 3
-Shading: {}. (), or []
-Example: {OO} (As color cannot be displayed, we will omit color in the following examples.)
+- Shape: O, S, or X
+- Color: RED, GREEN, or BLUE
+- Number: 1, 2, or 3
+- Shading: {}. (), or []
+- Example: {OO} (As color cannot be displayed, we will omit color in the following examples.)
 
-A Set consists of 3 cards in which each of the cards°Ø features, looked at one by one, are the same on each card or different on each card. All of the features must separately satisfy this rule.
+A Set consists of 3 cards in which each of the cards‚Äô features, looked at one by one, are the same on each card or different on each card. All of the features must separately satisfy this rule.
 
 Some examples of Sets:
-1. {0} {OO} {OOO}
-2. [S] {OO} (XXX)
-3. {X} {O} {S}
+ 1. {0} {OO} {OOO}
+ 2. [S] {OO} (XXX)
+ 3. {X} {O} {S}
 
 These are NOT Sets:
-1. {O} (OO) {OOO} // There are two cards with curly braces, and one with parentheses.
-2. [S] {OO} (OOO) // There are two cards with shape O, and one card with shape S.
-3. {X} [O] (SS) // There are two cards with size 1, and one card with size 2.
+ 1. {O} (OO) {OOO} // There are two cards with curly braces, and one with parentheses.
+ 2. [S] {OO} (OOO) // There are two cards with shape O, and one card with shape S.
+ 3. {X} [O] (SS) // There are two cards with size 1, and one card with size 2.
 
-9 cards are placed on the board. If there are no possible Sets, 3 more cards will be dealt. To select 3 cards that you think make a Set, type in their coordinates in the form °∞A0°±. Neither capitalization nor whitespace matters.
+9 cards are placed on the board. If there are no possible Sets, 3 more cards will be dealt. To select 3 cards that you think make a Set, type in their coordinates in the form ‚ÄúA0‚Äù. Neither capitalization nor whitespace matters.
 
 Examples of valid entires:
-A0 B2 C1
-A3 B1 C0
-A0 A1 A3
+- A0 B2 C1
+- A3 B1 C0
+- A0 A1 A3
 
-If your selection is a Set, the cards selected will be removed from the board. There will always be at least 9 cards on the board, unless there are no more cards in the deck. You can manually draw by typing °∞D°± or °∞d°±. You are also able to quit the game at any point by entering °∞Q°± or °∞q.°±
+If your selection is a Set, the cards selected will be removed from the board. There will always be at least 9 cards on the board, unless there are no more cards in the deck. You can manually draw by typing ‚ÄúD‚Äù or ‚Äúd‚Äù. You are also able to quit the game at any point by entering ‚ÄúQ‚Äù or ‚Äúq.‚Äù
 
 Good luck, and happy Set finding!
 
