@@ -168,7 +168,7 @@ public class Set2 {
 	}
 	
 	// Writing to High Scores
-	ScoreParser sp = new ScoreParser("HighScores - Sprint.txt",
+	ScoreParser sp = new ScoreParser("Highscores_Sprint.txt",
 					 name,
 					 (score + ""),
 					 1);

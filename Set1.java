@@ -182,7 +182,7 @@ public class Set1 {
 	}
 	
 	// Writing to High Scores
-	ScoreParser sp = new ScoreParser("HighScores - Standard.txt",
+	ScoreParser sp = new ScoreParser("Highscores_Standard.txt",
 					 name,
 					 (calcScore(times) + ""),
 					 -1);
