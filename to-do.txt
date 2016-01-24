@@ -26,27 +26,28 @@ Phase I - Skeleton
   * "You Win" Message once all Sets are found (By 1/20)
 ================================================================================
 Phase II - Polish
-- Create user interface for Set.java
-  - Give user choice to select game mode (By 1/20)
+* Create user interface for Set.java
+  * Give user choice to select game mode (By 1/20)
 - Create instructions, about, etc.
   - Create about page (By 1/20)
   - Create instructions page (By 1/20)
-  - Create credits page (By 1/20)
+  - Create highscores display (By ??)
 * Create scoring mechanism
   * Implement calcScore() (By 1/21)
   * Implement final score display (By 1/21)
-- Debug, fix anything that’s broken
-  - Experiment, play Set! (By 1/22)
+* Debug, fix anything that’s broken
+  * Experiment, play Set! (By 1/22)
   ? Send out for playtesting and feedback (By 1/22)
 ================================================================================
 Phase III - Robustify
-- Fine tune the scoring mechanism (By 1/24)
+* Fine tune the scoring mechanism (By 1/24)
   ? Make Set implement different interfaces for scoring options (By 1/24)
-- Robustify parsing algorithm to allow more user freedom (By 1/24)
-  - Add error catching and throwing (By 1/24)
-  - Give user ability to quit in the middle of a game (By 1/24)
-? Create more game modes (Endless? Pro Set? Time Attack?)
+* Robustify parsing algorithm to allow more user freedom (By 1/24)
+  * Add error catching and throwing (By 1/24)
+  * Give user ability to quit in the middle of a game (By 1/24)
+* Create more game modes (Endless? Pro Set? Time Attack?)
+  * Create Sprint mode
   ? Create Endless mode (By 1/25)
   ? Create Pro Set (By 1/25)
-? Create a high-score system (By 1/25)
-  ? Create file-writing algorithm (By 1/25)
+* Create a high-score system (By 1/25)
+  * Create file-writing algorithm (By 1/25)

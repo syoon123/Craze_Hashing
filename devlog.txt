@@ -11,6 +11,16 @@ Contributor:
 
 ================================================================================
 Date: 2015-01-23
+Contributor: ZZ
+- Add key argument to Scoreparser
+  - Create ability to make highscore files by largest-to-smallest or vice versa
+- Add user input to Set driver class
+  - Create ability to play one game after another
+  - Create game selection
+================================================================================
+
+================================================================================
+Date: 2015-01-23
 Contributor: SY
 - Made Set2 the Sprint Game Mode, Made Set1 the Average Time Per Set Mode
 - Finished Set2
