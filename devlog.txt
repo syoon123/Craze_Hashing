@@ -10,6 +10,23 @@ Contributor:
 ================================================================================
 
 ================================================================================
+Date: 2015-01-23
+Contributor: SY
+- Made Set2 the Sprint Game Mode, Made Set1 the Average Time Per Set Mode
+- Finished Set2
+================================================================================
+
+================================================================================
+Date: 2016-01-22 
+Contributor: SY+ZZ
+- Create ScoreParser
+  - takes fileName, username, score and key as attrs
+  - checks for given file, creates if it doesn't exist
+  - reads/parses file as 2D Array, inserts username and score in appropriate
+    position (if key is 1, highest to lowest, if key is -1, lowest to highest)
+================================================================================
+
+================================================================================
 Date: 2016-01-20 
 Contributor: SY+ZZ
 - Create time scoring mechanism
