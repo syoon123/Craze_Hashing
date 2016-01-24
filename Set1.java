@@ -64,10 +64,11 @@ public class Set1 {
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	// Variables
+	String name = "ANON";
 	Board board = new Board();
 	ArrayList<Long> times = new ArrayList<Long>();
 	long curTime = -1L;
-
+	    
 	// Gameplay
 	outerloop:
 	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
@@ -169,11 +170,20 @@ public class Set1 {
 	// Score Display
 
 	System.out.println("\nGame over!");
-	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
+	System.out.println("Score: " + calcScore(times) + " seconds per Set.\n");
+
+	// Name Selection
+	Scanner sc = new Scanner(System.in);
+	System.out.println("What is your name? (Up to 7 characters)");
+	if (sc.hasNext()) {
+	    name = sc.nextLine();
+	    if (name.length() > 7)
+		name = name.substring(0,7);
+	}
 	
 	// Writing to High Scores
 	ScoreParser sp = new ScoreParser("HighScores - Standard.txt",
-					 "Generic Name",
+					 name,
 					 (calcScore(times) + ""),
 					 -1);
 	System.out.println("Score saved!");

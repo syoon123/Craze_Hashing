@@ -53,6 +53,7 @@ public class Set2 {
     // MAIN
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
 	// Variables
+	String name = "ANON";
 	Board board = new Board();
 	ArrayList<Long> times = new ArrayList<Long>();
 	int score = 0;
@@ -155,11 +156,20 @@ public class Set2 {
 	// Score Display
 
 	System.out.println("\nTime's up!");
-	System.out.println("Score: " + score + " Sets.");
+	System.out.println("Score: " + score + " Sets.\n");
+	
+	// Name Selection
+	Scanner sc = new Scanner(System.in);
+	System.out.println("What is your name? (Up to 7 characters)");
+	if (sc.hasNext()) {
+	    name = sc.nextLine();
+	    if (name.length() > 7)
+		name = name.substring(0,7);
+	}
 	
 	// Writing to High Scores
 	ScoreParser sp = new ScoreParser("HighScores - Sprint.txt",
-					 "Generic Name",
+					 name,
 					 (score + ""),
 					 1);
 	System.out.println("Score saved!");
