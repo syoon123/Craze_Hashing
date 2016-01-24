@@ -14,7 +14,7 @@ $ javac Set.java
 $ java Set
 '''
 
-## Gameplay and Instructions
+## Gameplay
 The gameplay of Command Line Set is the same as the game of Set itself. Sets are found by choosing three cards with each attribute (among color, shape, shading and number) being all the same, or all different. Coordinates are inputted to select cards, and are entered in the form ROW COLUMN, such as A0. There may not be more than 21 cards on the baord at any time, and there will always be at least 9 cards on the board if there are cards remaining in the deck. Descriptions of the two game modes are below.
 
 1. **Standard Game Mode**
