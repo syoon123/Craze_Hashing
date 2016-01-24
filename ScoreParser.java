@@ -5,6 +5,7 @@ import java.io.*;
 
 public class ScoreParser {
     // INSTANCE VARIABLES
+    private int _key = 0; // 1 - Parse highest to lowest | -1 - Parse Lowest to Highest
     private String _buffer, _file;
     private String[] _newScore;
     private static final String delimiter1 = "\t"; // Name DL1 Score
@@ -12,8 +13,9 @@ public class ScoreParser {
     private String[][] _scores;
 
     // METHODS
-    public ScoreParser(String filename, String name, String score)
-	throws FileNotFoundException {	
+    public ScoreParser(String filename, String name, String score, int key)
+	throws FileNotFoundException {
+	_key = key;
     	_file = filename;
 	_newScore = new String[]{name, score};
 	
@@ -68,7 +70,7 @@ public class ScoreParser {
 	for (int i = 0; i < ret.length; i++) {
 	    if (temp.size() == 0) {
 		ret[i] = score;
-	    } else if (compareStrings(score[1], temp.get(0)[1]) < 0) { // Score to be inserted is less
+	    } else if (compareStrings(score[1], temp.get(0)[1], _key) > 0) { // Score to be inserted is less
 		ret[i] = score;
 		for (int j = i + 1; j < ret.length; j++) // Populate with rest of highscores
 		    ret[j] = temp.remove(0);
@@ -81,13 +83,13 @@ public class ScoreParser {
         _scores = ret;
     }
     // Helper: Compare two Strings as doubles
-    public static int compareStrings(String d1, String d2) {
+    public static int compareStrings(String d1, String d2, int key) {
 	double _d1 = Double.parseDouble(d1);
 	double _d2 = Double.parseDouble(d2);
 	if (_d1 > _d2)
-	    return 1;
+	    return 1 * key;
 	if (_d2 > _d1)
-	    return -1;
+	    return -1 * key;
 	return 0;
     }
 }
