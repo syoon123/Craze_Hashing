@@ -172,9 +172,10 @@ public class Set1 {
 	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
 	
 	// Writing to High Scores
-	ScoreParser sp = new ScoreParser("HighScores.txt",
+	ScoreParser sp = new ScoreParser("HighScores - Standard.txt",
 					 "Generic Name",
-					 (calcScore(times) + ""));
+					 (calcScore(times) + ""),
+					 -1);
 	System.out.println("Score saved!");
     }
 }

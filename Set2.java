@@ -155,12 +155,13 @@ public class Set2 {
 	// Score Display
 
 	System.out.println("\nTime's up!");
-	System.out.println("Score: " + score + "Sets.");
+	System.out.println("Score: " + score + " Sets.");
 	
 	// Writing to High Scores
-	ScoreParser sp = new ScoreParser("HighScores2.txt",
+	ScoreParser sp = new ScoreParser("HighScores - Sprint.txt",
 					 "Generic Name",
-					 (score + ""));
+					 (score + ""),
+					 1);
 	System.out.println("Score saved!");
     }
 }
