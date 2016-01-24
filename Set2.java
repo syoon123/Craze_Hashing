@@ -29,17 +29,6 @@ public class Set2 {
 	return checkNums && checkShapes && checkColors && checkShadings;
     }
 
-    // SCORE CALCULATION ALGORITHM - STANDARD GAME
-    public static double calcScore(ArrayList<Long> times) {
-	int size = times.size();
-	if (size == 0) return 999.999;
-	double totalTime = 0;
-	for (Long time : times)
-	    totalTime += (double)time; // Calculate total time taken
-	double avgTime = totalTime / size; // Average time per set
-	return avgTime / 1000; // Change from milliseconds to seconds
-    }
-
     // SET EXISTENCE ALGORITHM
     public static boolean setExists(ArrayList<Card> cards) {
         int size = cards.size();
@@ -66,11 +55,13 @@ public class Set2 {
 	// Variables
 	Board board = new Board();
 	ArrayList<Long> times = new ArrayList<Long>();
-	long curTime = -1L;
-
+	int score = 0;
+	long markTime;
+	
 	// Gameplay
+	markTime = System.currentTimeMillis();
 	outerloop:
-	while (board.getDeckSize() > 0 || setExists(board.getBoardCards())) { // Game Loop
+	while ((board.getDeckSize() > 0 || setExists(board.getBoardCards())) && (System.currentTimeMillis()-markTime < 180000.0)) { // Game Loop
 	    System.out.println(board);
 	    if (!setExists(board.getBoardCards())) {
 		System.out.println("No possible sets: drawing...");
@@ -78,8 +69,6 @@ public class Set2 {
 		continue;
 	    }
 	    int[] check = new int[6]; // For Input Parsing
-	    if (curTime < 0)
-		curTime = System.currentTimeMillis(); // Timing for score.
 	    parseloop:
 	    while (true) { // Input Loop
 		for (int i = 0; i < 6; i++)
@@ -145,11 +134,8 @@ public class Set2 {
 		    }
 		    else {
 			if (isSet(c1,c2,c3)) { // Is A Set
-			    curTime = System.currentTimeMillis() - curTime; // Find time it took to find a set.
-			    times.add(curTime);
-			    System.out.println("Times: " + times + "\n" + "Time for last set:\t" + curTime); // Debugging
-			    curTime = -1L;
 			    System.out.println("Booyah!");
+			    score++;
 			    board.removeSet(check[0],check[1],
 					    check[2],check[3],
 					    check[4],check[5]);
@@ -168,13 +154,13 @@ public class Set2 {
 	} // End Game Loop
 	// Score Display
 
-	System.out.println("\nGame over!");
-	System.out.println("Score: " + calcScore(times) + " seconds per Set.");
+	System.out.println("\nTime's up!");
+	System.out.println("Score: " + score + "Sets.");
 	
 	// Writing to High Scores
-	ScoreParser sp = new ScoreParser("HighScores.txt",
+	ScoreParser sp = new ScoreParser("HighScores2.txt",
 					 "Generic Name",
-					 (calcScore(times) + ""));
+					 (score + ""));
 	System.out.println("Score saved!");
     }
 }
