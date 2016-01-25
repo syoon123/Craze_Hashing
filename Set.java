@@ -39,6 +39,7 @@ public class Set {
 		    i.main(null);
 		} else if (_input == 51) { // "3"
 		    System.out.println("About\n");
+		    about();
 		} else if (_input == 52) { // "4"
 		    try {
 			choosescore(input);
@@ -103,5 +104,9 @@ public class Set {
     public static void clearBuffer(BufferedReader input) throws IOException {
 	while (input.ready())
 	    input.read();
+    }
+
+    public static void about() {
+	System.out.println("Command Line Set was created by Team Craze_Hashing (Sarah Yoon and Zicheng Zhen) for AP Computer Science. The program was created in Java 7. The goal of the project was to incorporate what was learned in class into a project of the students' own design.");
     }
 }
