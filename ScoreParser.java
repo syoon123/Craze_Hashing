@@ -13,6 +13,17 @@ public class ScoreParser {
     private String[][] _scores;
 
     // METHODS
+    public ScoreParser(String filename) throws FileNotFoundException { // Used for Displaying Highscores
+	_file = filename;
+	_buffer = read(); // Throws FileNotFoundException
+	String[] scoreList = _buffer.split(delimiter2); // List of scores.
+	int length = Math.min(10, scoreList.length);
+	// Displays Top 10
+	System.out.println("Place\tName\tScore");
+	for (int i = 0; i < length; i++)
+	    System.out.println(i + ".\t" + scoreList[i]);
+	System.out.println();
+    }
     public ScoreParser(String filename, String name, String score, int key)
 	throws FileNotFoundException {
 	_key = key;
@@ -38,6 +49,7 @@ public class ScoreParser {
     }
     // Parse buffer into ArrayList -- scores.
 
+    // Reads the file as a String and adds delimiters.
     public String read() throws FileNotFoundException {
 	Scanner sc = new Scanner(new File(_file));
         String ret = "";
@@ -47,6 +59,8 @@ public class ScoreParser {
 	// System.out.println(ret); // Debugging
 	return ret;
     }
+
+    // 
     public void write() throws FileNotFoundException {
 	PrintWriter pw = new PrintWriter(new File(_file));
 	for (int i = 0; i < _scores.length; i++) {
@@ -55,7 +69,8 @@ public class ScoreParser {
 	pw.close();
     }
 
-    public void format(String[] newScore) { // Changes _buffer into _scores
+    // Formats the buffer into a 2D String Array for easy writing to file
+    public String[][] format(String[] newScore) { // Changes _buffer into _scores
 	// Temporary
 	String[] score = newScore;
 	String[] scoreList = _buffer.split(delimiter2);
@@ -81,6 +96,7 @@ public class ScoreParser {
 	}
 	// for (int i = 0; i < ret.length; i++) System.out.println(Arrays.toString(ret[i])); // Debugging
         _scores = ret;
+	return _scores;
     }
     // Helper: Compare two Strings as doubles
     public static int compareStrings(String d1, String d2, int key) {
