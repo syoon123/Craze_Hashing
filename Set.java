@@ -38,7 +38,7 @@ public class Set {
 		    Instructions i = new Instructions();
 		    i.main(null);
 		} else if (_input == 51) { // "3"
-		    System.out.println("About\n");
+		    System.out.println("About");
 		    about();
 		} else if (_input == 52) { // "4"
 		    try {
@@ -107,6 +107,6 @@ public class Set {
     }
 
     public static void about() {
-	System.out.println("Command Line Set was created by Team Craze_Hashing (Sarah Yoon and Zicheng Zhen) for AP Computer Science. The program was created in Java 7. The goal of the project was to incorporate what was learned in class into a project of the students' own design.");
+	System.out.println("Command Line Set was created by Team Craze_Hashing (Sarah Yoon and Zicheng Zhen) for AP Computer Science. The program was created in Java 7. The goal of the project was to incorporate what was learned in class into a project of the students' own design.\n");
     }
 }
