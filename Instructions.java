@@ -125,7 +125,7 @@ public class Instructions {
 	ret[1] = ret2;
 	
 	String ret3 = "";
-	ret3 += "\n9 cards are placed on the board. If there are no possible Sets,\n3 more cards will be dealt. To select 3 cards that you think\nmake a Set, type in their coordinates in the form \"A0\". Neither\ncapitalization nor whitespace matters.\n";
+	ret3 += "\n9 cards are placed on the board. If there are no possible Sets,\n3 more cards will be dealt. To select 3 cards that you think\nmake a Set, type in their coordinates in the form \"A0 B0 C0\". Neither\ncapitalization nor whitespace matters.\n";
 	ret3 += "\nIf your selection is a Set, the cards selected will be removed from\nthe board. There will always be at least 9 cards on the board,\nunless there are no more cards in the deck. You can manually\ndraw by typing \"D\" or \"d\". You are\nalso able to quit the game at any point by entering \"Q\" or \"q.\"\n";
 	ret3 += "\nEnter \"n\" to continue.\n";
 	ret[2] = ret3;
