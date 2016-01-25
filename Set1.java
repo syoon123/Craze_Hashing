@@ -47,7 +47,7 @@ public class Set1 {
             for (int j = i+1; j < size - 1; j++)
                 for (int k = j+1; k < size; k++)
                     if (isSet(cards.get(i), cards.get(j), cards.get(k))) {
-                        System.out.println(i + "\t" + j + "\t" + k); // Debugging
+                        // System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }
         return false;
@@ -148,7 +148,7 @@ public class Set1 {
 			if (isSet(c1,c2,c3)) { // Is A Set
 			    curTime = System.currentTimeMillis() - curTime; // Find time it took to find a set.
 			    times.add(curTime);
-			    System.out.println("Times: " + times + "\n" + "Time for last set:\t" + curTime); // Debugging
+			    // System.out.println("Times: " + times + "\n" + "Time for last set:\t" + curTime); // Debugging
 			    curTime = -1L;
 			    System.out.println("Booyah!");
 			    board.removeSet(check[0],check[1],

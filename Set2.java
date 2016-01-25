@@ -36,7 +36,7 @@ public class Set2 {
             for (int j = i+1; j < size - 1; j++)
                 for (int k = j+1; k < size; k++)
                     if (isSet(cards.get(i), cards.get(j), cards.get(k))) {
-                        System.out.println(i + "\t" + j + "\t" + k); // Debugging
+                        // System.out.println(i + "\t" + j + "\t" + k); // Debugging
                         return true;
                     }
         return false;
