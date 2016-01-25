@@ -9,10 +9,11 @@ Command Line Set is the classic game of Set (http://www.setgame.com) designed fo
 
 ## Running The Game
 The game can be run by typing the following in command line:
-'''
+```
 $ javac Set.java
 $ java Set
-'''
+```
+**_Please note that running the game in Windows or on a non-Unix command line may not display colors._**
 
 ## Gameplay
 The gameplay of Command Line Set is the same as the game of Set itself. Sets are found by choosing three cards with each attribute (among color, shape, shading and number) being all the same, or all different. Coordinates are inputted to select cards, and are entered in the form ROW COLUMN, such as A0. There may not be more than 21 cards on the baord at any time, and there will always be at least 9 cards on the board if there are cards remaining in the deck. Descriptions of the two game modes are below.
