@@ -10,6 +10,16 @@ Contributor:
 ================================================================================
 
 ================================================================================
+Date: 2015-01-24
+Contributor: SY
+- Add Instructions.java, cs1 (with Keyboard.java)
+  - instantiates Cards for examples of Sets and non-Sets
+  - clears console between paragraphs
+  - enter "n" to move to next screen
+  - main method run in Set.java
+================================================================================
+
+================================================================================
 Date: 2015-01-23
 Contributor: ZZ
 - Add key argument to Scoreparser
