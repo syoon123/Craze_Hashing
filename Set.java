@@ -16,7 +16,7 @@ public class Set {
 	"`8b.  ;8.`8888 8 8888             8 8888" + "\n" +
 	" `Y8888P ,88P' 8 888888888888     8 8888\n";
     
-    public static void main(String[] args) throws IOException, IndexOutOfBoundsException {
+    public static  void main(String[] args) throws IOException, IndexOutOfBoundsException, InterruptedException {
 	playloop:
 	while (true) { // Replay Loop
 	    System.out.println(LOGO);
@@ -35,7 +35,8 @@ public class Set {
 		    choosegame(input);
 		    break;
 		} else if (_input == 50) { // "2"
-		    System.out.println("Instructions\n");
+		    Instructions i = new Instructions();
+		    i.main(null);
 		} else if (_input == 51) { // "3"
 		    System.out.println("About\n");
 		} else if (_input == 52) { // "4" -- To Do Later
