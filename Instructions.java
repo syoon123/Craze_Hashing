@@ -133,9 +133,7 @@ public class Instructions {
 	String ret4 = "";
 	ret4 += "\nFor Standard Mode, the game ends when the deck is depleted and\nthere are no more possible Sets on the board. Your score is the\naverage time you spent, in seconds, per correct Set.\n";
 	ret4 += "\nFor Sprint Mode, the game ends after exactly 3 minutes. Your\nscore is the number of Sets you were able to find under this\ntime limit.\n";
-	ret4 += "\nGood luck and happy Set finding!!\n";
-
-	ret4 += "Choose an option:\n1. Play\n3. About\n4. Highscores\n5. Quit\n\n";
+	ret4 += "\nGood luck and happy Set finding!!\n\n";
 	
 	ret[3] = ret4;
 
